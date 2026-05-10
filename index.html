@@ -86,26 +86,39 @@
     <script>
         // Set default value based on user example
         const defaultJson = {
-            "Msg": {
-                "MsgHeader": {
-                    "MsgID": "TEST-BAAS-001",
-                    "Ver": "01",
-                    "SvcID": "IDGETDUKCAPILFR01",
-                    "TxnCode": "GetDukcapilFR",
-                    "Env": "S"
+                "user_id": 101,
+                "profile": {
+                    "name": "Jane Doe",
+                    "contact": {
+                    "email": "jane.doe@example.com",
+                    "phones": ["+1-555-0199", "+1-555-0123"]
+                    },
+                    "address": {
+                    "street": "123 Tech Lane",
+                    "city": "San Francisco",
+                    "geo": {
+                        "lat": "37.7749",
+                        "lng": "-122.4194"
+                    }
+                    }
                 },
-                "MsgBody": {
-                    "transactionId": "621d-a77abe0862-721e",
-                    "transactionSource": "Mobile",
-                    "nik": "KTP NO",
-                    "threshold": "8",
-                    "image": "BASE64 SELFIE IMAGE",
-                    "template": "",
-                    "type": "FACE",
-                    "position": "F"
-                }
-            }
-        };
+                "preferences": {
+                    "notifications": {
+                    "email": true,
+                    "sms": false
+                    },
+                    "theme": "dark"
+                },
+                "orders": [
+                    {
+                    "id": "A456",
+                    "items": [
+                        { "name": "Wireless Mouse", "price": 25.99 },
+                        { "name": "Mechanical Keyboard", "price": 89.00 }
+                    ]
+                    }
+                ]
+            };
         document.getElementById('jsonInput').value = JSON.stringify(defaultJson, null, 2);
 
         // Kata kunci yang dihindari dalam Java
